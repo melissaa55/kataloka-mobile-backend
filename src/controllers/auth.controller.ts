@@ -60,7 +60,7 @@ authRouter.openapi(registerRoute, async (c) => {
       password: passwordHash,
     });
 
-    return c.json(newUser, 200);
+    return c.json(newUser, 201);
   } catch (err) {
     if (err instanceof Error) {
       return c.json(

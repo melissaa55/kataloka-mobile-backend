@@ -20,7 +20,7 @@ export const registerRoute = createRoute({
     },
   },
   responses: {
-    200: {
+    201: {
       description: 'Registration succesful.',
     },
     400: createErrorResponse('UNION', 'Bad request error'),
