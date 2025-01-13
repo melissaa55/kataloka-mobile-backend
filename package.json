@@ -9,7 +9,8 @@
     "check:write": "bun run format && bun run pretty",
     "codecheck": "eslint src --ext .ts",
     "typecheck": "tsc --noEmit",
-    "format": "eslint src --ext .ts --fix"
+    "format": "eslint src --ext .ts --fix",
+    "seed": "bun run src/db/seed/seed.ts"
   },
   "dependencies": {
     "@hono/zod-openapi": "^0.18.3",
