@@ -109,5 +109,8 @@ authProtectedRouter.openapi(logoutRoute, async (c) => {
 
 authProtectedRouter.openapi(selfRoute, async (c) => {
   const user = await UserSchema.parseAsync(c.var.user);
-  return c.json(user, 200);
+  const fetchedUser = await findUserByEmail(db, user.email);
+  const { password: _, ...userWithoutPassword } = fetchedUser ?? user;
+  _;
+  return c.json(userWithoutPassword, 200);
 });
