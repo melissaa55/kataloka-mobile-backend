@@ -24,3 +24,16 @@ export const updateUser = async (
     .returning()
     .then(first);
 };
+
+export const updateUserScore = async (
+  db: Database,
+  userId: string,
+  score: number,
+) => {
+  return await db
+    .update(user)
+    .set({ quizScore: score })
+    .where(eq(user.id, userId))
+    .returning()
+    .then(first);
+};

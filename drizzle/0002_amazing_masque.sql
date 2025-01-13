@@ -1,0 +1,1 @@
+ALTER TABLE "user" ADD COLUMN "quiz_score" integer DEFAULT 0;

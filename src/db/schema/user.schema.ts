@@ -1,5 +1,5 @@
 import { type InferSelectModel } from 'drizzle-orm';
-import { pgTable, text, timestamp } from 'drizzle-orm/pg-core';
+import { integer, pgTable, text, timestamp } from 'drizzle-orm/pg-core';
 
 import { createId, getNow } from '../../utils/drizzle-schema-util';
 
@@ -8,6 +8,7 @@ export const user = pgTable('user', {
   email: text('email').notNull().unique(),
   fullName: text('full_name'),
   password: text('password').notNull(),
+  quizScore: integer('quiz_score').default(0),
   createdAt: timestamp('created_at').defaultNow(),
   updatedAt: timestamp('updated_at').$onUpdate(getNow),
 });

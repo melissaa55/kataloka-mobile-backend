@@ -11,6 +11,7 @@ export const CreateUserSchema = createInsertSchema(user, {
   password: z.string().min(8, 'Password must have minimum length of 8'),
 }).omit({
   id: true,
+  quizScore: true,
   createdAt: true,
   updatedAt: true,
 });
@@ -37,3 +38,7 @@ export const UpdateUserSchema = z.object({
   fullName: z.string().optional(),
 });
 export type UpdateUserType = z.infer<typeof UpdateUserSchema>;
+
+export const UpdateUserScoreBodySchema = z.object({
+  score: z.number().int().min(0, 'Score must be greater than or equal to 0'),
+});

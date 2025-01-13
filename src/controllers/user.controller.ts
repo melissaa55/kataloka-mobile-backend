@@ -1,6 +1,10 @@
 import { db } from '~/db/drizzle';
-import { findUserByEmail, updateUser } from '~/repositories/user.repository';
-import { updateUserRoute } from '~/routes/user.route';
+import {
+  findUserByEmail,
+  updateUser,
+  updateUserScore,
+} from '~/repositories/user.repository';
+import { updateUserRoute, updateUserScoreRoute } from '~/routes/user.route';
 import { hashPassword, verifyPassword } from '~/utils/password-hash';
 import { createAuthRouter } from '~/utils/router-factory';
 
@@ -55,6 +59,41 @@ userProtectedRouter.openapi(updateUserRoute, async (c) => {
       },
       200,
     );
+  } catch (err) {
+    if (err instanceof Error) {
+      return c.json(
+        {
+          error: err.message,
+        },
+        400,
+      );
+    }
+
+    return c.json(
+      {
+        error: 'Unexpected error occured',
+      },
+      500,
+    );
+  }
+});
+
+userProtectedRouter.openapi(updateUserScoreRoute, async (c) => {
+  try {
+    const { score } = c.req.valid('json');
+
+    if (score < 0) {
+      return c.json(
+        {
+          error: 'Score must be greater than or equal to 0',
+        },
+        400,
+      );
+    }
+
+    const res = await updateUserScore(db, c.var.user.id, score);
+
+    return c.json(res, 201);
   } catch (err) {
     if (err instanceof Error) {
       return c.json(
