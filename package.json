@@ -1,5 +1,6 @@
 {
   "name": "kataloka-mobile-backend",
+  "type": "module",
   "scripts": {
     "dev": "bun run --hot src/index.ts",
     "build": "tsc && tsc-alias",
