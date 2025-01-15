@@ -93,10 +93,11 @@ authRouter.openapi(loginRoute, async (c) => {
   }
 
   // Login user
-  const { accessToken } = await setCookiesToken(c, user);
+  const { accessToken: _ } = await setCookiesToken(c, user);
+  _;
   return c.json(
     {
-      accessToken,
+      user,
     },
     200,
   );

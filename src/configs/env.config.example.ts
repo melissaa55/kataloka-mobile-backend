@@ -10,7 +10,7 @@ const EnvSchema = z.object({
   TOKEN_EXPIRATION_TIME: z.coerce.number().default(3600),
   ALLOWED_ORIGINS: z
     .string()
-    .default('["*"]')
+    .default('["http://10.10.10.194:8081"]')
     .transform((value) => JSON.parse(value.replace(/\\/g, '')))
     .pipe(z.array(z.string().url())),
 });

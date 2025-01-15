@@ -46,6 +46,11 @@ export const loginRoute = createRoute({
   responses: {
     200: {
       description: 'Login succesful',
+      content: {
+        'application/json': {
+          schema: UserSchema,
+        },
+      },
     },
     400: createErrorResponse('UNION', 'Bad request error'),
     500: createErrorResponse('GENERIC', 'Internal server error'),

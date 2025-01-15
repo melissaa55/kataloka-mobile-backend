@@ -48,7 +48,7 @@ app.get(
   }),
 );
 
-console.log(`Server is running on port ${app.fetch}`);
+console.log(`Server is running on port ${env.PORT}`);
 
 export default {
   fetch: app.fetch,
