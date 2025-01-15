@@ -1,4 +1,3 @@
-import { serve } from '@hono/node-server';
 import { OpenAPIHono } from '@hono/zod-openapi';
 import { apiReference } from '@scalar/hono-api-reference';
 import { cors } from 'hono/cors';
@@ -49,9 +48,9 @@ app.get(
   }),
 );
 
-console.log(`Server is running on port ${env.PORT}`);
+console.log(`Server is running on port ${app.fetch}`);
 
-serve({
+export default {
   fetch: app.fetch,
   port: env.PORT,
-});
+};

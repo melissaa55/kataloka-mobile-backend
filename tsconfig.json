@@ -4,16 +4,22 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "strict": true,
-    "types": ["bun"],
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx",
     "noImplicitAny": true,
     "paths": {
       "~/*": ["./src/*"]
     },
+    "lib": [
+      "ESNext"
+    ],
     "baseUrl": ".",
     "skipLibCheck": true,
     "experimentalDecorators": true,
+    "types": [
+        "@cloudflare/workers-types/2023-07-01",
+        "node"
+    ],
     "outDir": "./.dist"
   }
 }
