@@ -2,6 +2,7 @@
   "name": "kataloka-mobile-backend",
   "scripts": {
     "dev": "bun run --hot src/index.ts",
+    "build": "tsc && tsc-alias",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
@@ -13,14 +14,17 @@
     "seed": "bun run src/db/seed/seed.ts"
   },
   "dependencies": {
+    "@hono/node-server": "^1.13.7",
     "@hono/zod-openapi": "^0.18.3",
     "bcryptjs": "^2.4.3",
+    "bun": "^1.1.43",
     "dotenv": "^16.4.7",
     "drizzle-kit": "^0.30.1",
     "drizzle-orm": "^0.38.3",
     "drizzle-zod": "^0.6.1",
     "hono": "^4.6.16",
     "postgres": "^3.4.5",
+    "tsc-alias": "^1.8.10",
     "uuid": "^11.0.5",
     "zod": "^3.24.1"
   },

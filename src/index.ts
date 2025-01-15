@@ -1,12 +1,12 @@
+import { serve } from '@hono/node-server';
 import { OpenAPIHono } from '@hono/zod-openapi';
 import { apiReference } from '@scalar/hono-api-reference';
-import { serve } from 'bun';
 import { cors } from 'hono/cors';
 
 import { env } from './configs/env.config';
 import { apiRouter } from './controllers/api.controller';
 
-const app = new OpenAPIHono({
+export const app = new OpenAPIHono({
   defaultHook: (result, c) => {
     if (!result.success) {
       return c.json({ errors: result.error.flatten() }, 400);
