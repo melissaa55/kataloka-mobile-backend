@@ -95,12 +95,7 @@ authRouter.openapi(loginRoute, async (c) => {
   // Login user
   const { accessToken: _ } = await setCookiesToken(c, user);
   _;
-  return c.json(
-    {
-      user,
-    },
-    200,
-  );
+  return c.json(user, 200);
 });
 
 authProtectedRouter.openapi(logoutRoute, async (c) => {

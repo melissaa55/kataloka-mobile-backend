@@ -42,3 +42,8 @@ export type UpdateUserType = z.infer<typeof UpdateUserSchema>;
 export const UpdateUserScoreBodySchema = z.object({
   score: z.number().int().min(0, 'Score must be greater than or equal to 0'),
 });
+
+export const scoreSchema = z.object({
+  score: z.number(),
+  totalScore: z.number(),
+});

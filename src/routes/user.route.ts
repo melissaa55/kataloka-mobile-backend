@@ -1,5 +1,6 @@
 import { createRoute } from '@hono/zod-openapi';
 import {
+  scoreSchema,
   UpdateUserBodySchema,
   UpdateUserScoreBodySchema,
   UserSchema,
@@ -62,3 +63,23 @@ export const updateUserScoreRoute = createRoute({
     500: createErrorResponse('GENERIC', 'Internal server error'),
   },
 });
+
+export const getUserScoreRoute = createRoute({
+  operationId: 'getUserScore',
+  tags: ['user'],
+  method: 'put',
+  path: '/user/score',
+  responses: {
+    200: {
+      description: 'User score updated.',
+      content: {
+        'application/json': {
+          schema: scoreSchema,
+        },
+      },
+    },
+    400: createErrorResponse('UNION', 'Bad request error'),
+    500: createErrorResponse('GENERIC', 'Internal server error'),
+  },
+});
+

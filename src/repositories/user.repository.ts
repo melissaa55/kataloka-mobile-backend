@@ -1,7 +1,7 @@
-import { eq } from 'drizzle-orm';
+import { count, eq } from 'drizzle-orm';
 import { Database } from '~/db/drizzle';
 import { first } from '~/db/helper';
-import { user } from '~/db/schema';
+import { quiz, user } from '~/db/schema';
 import { CreateUserType, UpdateUserType } from '~/types/user.type';
 
 export const findUserByEmail = async (db: Database, email: string) => {
@@ -36,4 +36,20 @@ export const updateUserScore = async (
     .where(eq(user.id, userId))
     .returning()
     .then(first);
+};
+
+export const getUserScore = async (db: Database, userId: string) => {
+  const score = await db.query.user.findFirst({
+    where: eq(user.id, userId),
+    columns: {
+      quizScore: true,
+    },
+  });
+
+  const totalScore = await db.select({ count: count() }).from(quiz);
+
+  return {
+    score,
+    totalScore,
+  };
 };
