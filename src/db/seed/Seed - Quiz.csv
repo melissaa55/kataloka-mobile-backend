@@ -1,11 +1,11 @@
-question,choice,answer_idx
-What is 1+1?;["1", "2", "3", "4"];1
-What is 2+2?;["4", "6", "8", "10"];0
-What is 3+3?;["1", "2", "6", "4"];2
-What is 4+4?;["1", "2", "3", "8"];3
-What is 5+5?;["1", "2", "3", "10"];3
-What is 6+6?;["1", "2", "12", "4"];2
-What is 7+7?;["1", "2", "3", "14"];3
-What is 8+8?;["1", "16", "3", "4"];1
-What is 9+9?;["1", "18", "3", "4"];1
-What is 10+10?;["20", "2", "3", "4"];0
+question;choice;answer_idx
+Manakah penulisan kata yang sesuai dengan EYD?;["Memperhatikan.", "Memperhatikkan.", "Memperhati-kan.", "Memerhatikan."];0
+Apa yang dimaksud dengan ejaan yang benar?;["Pengucapan kata sesuai aturan tata bahasa", "Cara penulisan huruf kapital dalam kalimat", "Penulisan kata sesuai dengan pedoman ejaan", "Aturan dalam menulis artikel ilmiah"];2
+Manakah dari pilihan berikut yang merupakan kalimat efektif?;["Andi membeli buku untuk membaca novel.", "Ibu memasak di dapur dengan api kecil.", "Ani pergi ke pasar untuk membeli sayur.", "Kucing itu sedang tidur dan bermain di halaman."];2
+Penulisan mana yang benar terkait penggunaan huruf kapital?;["Ibu pergi ke pasar.", "ibu Pergi ke pasar.", "Ibu Pergi ke Pasar.", "Ibu pergi ke Pasar."];0
+Kata yang sesuai dengan kaidah bahasa baku adalah�;["Aktifitas.", "Faksimile.", "Akte.", "Survey."];1
+Manakah contoh penggunaan tanda baca yang tepat?;["Andi membeli buku pensil dan, penghapus.", "Andi membeli, buku pensil dan penghapus.", "Andi membeli buku, pensil dan penghapus.", "Andi membeli buku, pensil, dan penghapus."];3
+Apa arti 'kalimat efektif' dalam konteks bahasa Indonesia?;["Kalimat yang sesuai aturan EYD.", "Kalimat yang padat, jelas, dan tidak bertele-tele.", "Kalimat yang menggunakan kata baku.", "Kalimat yang panjang namun jelas maknanya."];1
+Manakah kalimat yang menggunakan ejaan yang tepat?;["Mobil itu berwarna merah, besar dan cepat.", "Mobil itu berwarna merah besar, dan cepat.", "Mobil itu berwarna merah besar dan cepat.", "Mobil itu berwarna merah, besar, dan cepat."];3
+Kalimat berikut yang menggunakan kata baku adalah�;["Dia sedang mengirimkan faksimile ke kantor.", "Dia sedang mengirimkan faximile ke kantor.", "Dia sedang mengirimkan faks ke kantor.", "Dia sedang mengirimkan faksimille ke kantor."];0
+Penggunaan tanda baca yang tepat ada pada kalimat�;["Siswa, siswi dan guru, hadir di upacara.", "Siswa, siswi, dan guru hadir di upacara.", "Siswa, siswi, dan, guru hadir di upacara.", "Siswa, siswi, dan guru, hadir di upacara."];1
