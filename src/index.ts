@@ -35,6 +35,7 @@ app.doc('/openapi.json', {
     { name: 'auth', description: 'Authentication API' },
     { name: 'user', description: 'User API' },
     { name: 'quiz', description: 'Quiz API' },
+    { name: 'video', description: 'Video API' },
   ],
 });
 

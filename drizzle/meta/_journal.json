@@ -5,22 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1736693170879,
-      "tag": "0000_hesitant_gunslinger",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1736768089740,
-      "tag": "0001_cute_cloak",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1736787363731,
-      "tag": "0002_amazing_masque",
+      "when": 1737066067546,
+      "tag": "0000_cute_snowbird",
       "breakpoints": true
     }
   ]
