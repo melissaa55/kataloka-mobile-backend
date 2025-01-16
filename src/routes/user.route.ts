@@ -67,7 +67,7 @@ export const updateUserScoreRoute = createRoute({
 export const getUserScoreRoute = createRoute({
   operationId: 'getUserScore',
   tags: ['user'],
-  method: 'put',
+  method: 'get',
   path: '/user/score',
   responses: {
     200: {

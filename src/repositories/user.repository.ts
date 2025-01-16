@@ -1,6 +1,6 @@
 import { count, eq } from 'drizzle-orm';
 import { Database } from '~/db/drizzle';
-import { first } from '~/db/helper';
+import { first, firstSure } from '~/db/helper';
 import { quiz, user } from '~/db/schema';
 import { CreateUserType, UpdateUserType } from '~/types/user.type';
 
@@ -46,10 +46,13 @@ export const getUserScore = async (db: Database, userId: string) => {
     },
   });
 
-  const totalScore = await db.select({ count: count() }).from(quiz);
+  const totalScore = await db
+    .select({ count: count() })
+    .from(quiz)
+    .then(firstSure);
 
   return {
-    score,
-    totalScore,
+    score: score?.quizScore ?? 0,
+    totalScore: totalScore.count,
   };
 };
